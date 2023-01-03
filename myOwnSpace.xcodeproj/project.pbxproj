@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		801BCFCB294EF422009456DC /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BCFCA294EF422009456DC /* CalendarView.swift */; };
+		801BCFD1294F24CE009456DC /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801BCFD0294F24CE009456DC /* Day.swift */; };
 		8029011E29407163005431E4 /* myOwnSpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029011D29407163005431E4 /* myOwnSpaceApp.swift */; };
 		8029012029407163005431E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029011F29407163005431E4 /* ContentView.swift */; };
 		8029012229407166005431E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8029012129407166005431E4 /* Assets.xcassets */; };
 		8029012529407166005431E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8029012429407166005431E4 /* Preview Assets.xcassets */; };
 		8029012729407166005431E4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029012629407166005431E4 /* Persistence.swift */; };
 		8029012A29407166005431E4 /* myOwnSpace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8029012829407166005431E4 /* myOwnSpace.xcdatamodeld */; };
+		8029013329407872005431E4 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029013229407872005431E4 /* Month.swift */; };
+		80CF7B9B295C3DD6006280A8 /* DatePickerCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CF7B9A295C3DD6006280A8 /* DatePickerCalendar.swift */; };
+		80DC3849295DF4F600AF54AD /* TodayDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC3848295DF4F600AF54AD /* TodayDiary.swift */; };
+		80DC384B295EDCAF00AF54AD /* TabBarShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC384A295EDCAF00AF54AD /* TabBarShape.swift */; };
+		80DC384D29600B6500AF54AD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC384C29600B6500AF54AD /* HomeView.swift */; };
+		80DC385029600C3A00AF54AD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC384F29600C3A00AF54AD /* BaseViewModel.swift */; };
+		80DC38522960A21C00AF54AD /* AddNewDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC38512960A21C00AF54AD /* AddNewDiary.swift */; };
+		891E6272967F069BE32C8389 /* Pods_myOwnSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34101FAA47BD5A5DD9423C52 /* Pods_myOwnSpace.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BDA8C099A3A16CACB8A7BDF /* Pods-myOwnSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myOwnSpace.debug.xcconfig"; path = "Target Support Files/Pods-myOwnSpace/Pods-myOwnSpace.debug.xcconfig"; sourceTree = "<group>"; };
+		34101FAA47BD5A5DD9423C52 /* Pods_myOwnSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myOwnSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		801BCFCA294EF422009456DC /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		801BCFD0294F24CE009456DC /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		8029011A29407163005431E4 /* myOwnSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myOwnSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8029011D29407163005431E4 /* myOwnSpaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myOwnSpaceApp.swift; sourceTree = "<group>"; };
 		8029011F29407163005431E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +37,14 @@
 		8029012429407166005431E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8029012629407166005431E4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8029012929407166005431E4 /* myOwnSpace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myOwnSpace.xcdatamodel; sourceTree = "<group>"; };
+		8029013229407872005431E4 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		80CF7B9A295C3DD6006280A8 /* DatePickerCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCalendar.swift; sourceTree = "<group>"; };
+		80DC3848295DF4F600AF54AD /* TodayDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDiary.swift; sourceTree = "<group>"; };
+		80DC384A295EDCAF00AF54AD /* TabBarShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarShape.swift; sourceTree = "<group>"; };
+		80DC384C29600B6500AF54AD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		80DC384F29600C3A00AF54AD /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		80DC38512960A21C00AF54AD /* AddNewDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDiary.swift; sourceTree = "<group>"; };
+		EE0657E4C3E23BB04BBCA5F9 /* Pods-myOwnSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myOwnSpace.release.xcconfig"; path = "Target Support Files/Pods-myOwnSpace/Pods-myOwnSpace.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +52,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				891E6272967F069BE32C8389 /* Pods_myOwnSpace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6440064B982EDFBD8AA8B954 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34101FAA47BD5A5DD9423C52 /* Pods_myOwnSpace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D9CB6F725B89E8A7D07D448 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BDA8C099A3A16CACB8A7BDF /* Pods-myOwnSpace.debug.xcconfig */,
+				EE0657E4C3E23BB04BBCA5F9 /* Pods-myOwnSpace.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8029011129407163005431E4 = {
 			isa = PBXGroup;
 			children = (
 				8029011C29407163005431E4 /* myOwnSpace */,
 				8029011B29407163005431E4 /* Products */,
+				6D9CB6F725B89E8A7D07D448 /* Pods */,
+				6440064B982EDFBD8AA8B954 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +99,9 @@
 			children = (
 				8029011D29407163005431E4 /* myOwnSpaceApp.swift */,
 				8029011F29407163005431E4 /* ContentView.swift */,
+				80DC384E29600C2700AF54AD /* ViewModel */,
+				80290131294077CA005431E4 /* Model */,
+				8029013029407282005431E4 /* View */,
 				8029012129407166005431E4 /* Assets.xcassets */,
 				8029012629407166005431E4 /* Persistence.swift */,
 				8029012829407166005431E4 /* myOwnSpace.xcdatamodeld */,
@@ -73,6 +118,36 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8029013029407282005431E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				801BCFCA294EF422009456DC /* CalendarView.swift */,
+				80CF7B9A295C3DD6006280A8 /* DatePickerCalendar.swift */,
+				80DC384C29600B6500AF54AD /* HomeView.swift */,
+				80DC3848295DF4F600AF54AD /* TodayDiary.swift */,
+				80DC384A295EDCAF00AF54AD /* TabBarShape.swift */,
+				80DC38512960A21C00AF54AD /* AddNewDiary.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		80290131294077CA005431E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8029013229407872005431E4 /* Month.swift */,
+				801BCFD0294F24CE009456DC /* Day.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80DC384E29600C2700AF54AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				80DC384F29600C3A00AF54AD /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8029012D29407166005431E4 /* Build configuration list for PBXNativeTarget "myOwnSpace" */;
 			buildPhases = (
+				20C83ADBDF08D4235AD0ECA2 /* [CP] Check Pods Manifest.lock */,
 				8029011629407163005431E4 /* Sources */,
 				8029011729407163005431E4 /* Frameworks */,
 				8029011829407163005431E4 /* Resources */,
+				8B3097F8AEB04611205A6BEE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +215,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20C83ADBDF08D4235AD0ECA2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-myOwnSpace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B3097F8AEB04611205A6BEE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myOwnSpace/Pods-myOwnSpace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myOwnSpace/Pods-myOwnSpace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myOwnSpace/Pods-myOwnSpace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8029011629407163005431E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -145,7 +264,16 @@
 			files = (
 				8029012729407166005431E4 /* Persistence.swift in Sources */,
 				8029012A29407166005431E4 /* myOwnSpace.xcdatamodeld in Sources */,
+				80CF7B9B295C3DD6006280A8 /* DatePickerCalendar.swift in Sources */,
+				801BCFCB294EF422009456DC /* CalendarView.swift in Sources */,
+				80DC38522960A21C00AF54AD /* AddNewDiary.swift in Sources */,
+				801BCFD1294F24CE009456DC /* Day.swift in Sources */,
+				80DC385029600C3A00AF54AD /* BaseViewModel.swift in Sources */,
+				80DC384D29600B6500AF54AD /* HomeView.swift in Sources */,
 				8029012029407163005431E4 /* ContentView.swift in Sources */,
+				80DC3849295DF4F600AF54AD /* TodayDiary.swift in Sources */,
+				80DC384B295EDCAF00AF54AD /* TabBarShape.swift in Sources */,
+				8029013329407872005431E4 /* Month.swift in Sources */,
 				8029011E29407163005431E4 /* myOwnSpaceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +397,7 @@
 		};
 		8029012E29407166005431E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BDA8C099A3A16CACB8A7BDF /* Pods-myOwnSpace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -282,6 +411,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,6 +427,7 @@
 		};
 		8029012F29407166005431E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE0657E4C3E23BB04BBCA5F9 /* Pods-myOwnSpace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +441,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
