@@ -23,6 +23,7 @@ struct ContentView: View {
     }
 
     var body: some View {
+        NavigationView {
         TabView(selection: $baseData.currentTab ) {
             HomeView()
                 .environmentObject(baseData)
@@ -45,25 +46,26 @@ struct ContentView: View {
                     .offset(x: -10)
                 
                 // MARK: CURVED BUTTON
-                NavigationLink {
-                    
-                } label: {
-                    Image(systemName: "plus")
-                        .resizable()
-                        .renderingMode(.template)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 26, height: 26)
-                        .offset(x: -1)
-                        .padding(18)
-                        .foregroundColor(Color.white)
-                        .background(Color("B28BF5"))
-                        .clipShape(Circle())
-                    //MAR: - BUTTON SHADOWS
-                        .shadow(color: Color.black.opacity(0.04), radius: 5, x: 5, y: 5)
-                        .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)
-                }
-                .offset(y: -25)
-                
+                NavigationLink(destination: AddNewDiary()) {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .renderingMode(.template)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 26, height: 26)
+                            .offset(x: -1)
+                            .padding(18)
+                            .foregroundColor(Color.white)
+                            .background(Color("B28BF5"))
+                            .clipShape(Circle())
+                        //MAR: - BUTTON SHADOWS
+                            .shadow(color: Color.black.opacity(0.04), radius: 5, x: 5, y: 5)
+                            .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)
+                    }
+                    .offset(y: -25)
+                    .onTapGesture {
+                        baseData.showDetail = true
+                    }
+                                
                 TabButton(Tab: .ClipBoard)
                     .offset(x: 10)
                 TabButton(Tab: .Person)
@@ -76,13 +78,13 @@ struct ContentView: View {
                     .ignoresSafeArea(.container, edges: .bottom)
             )
             //MARK: - HIDE TAB ON DETAIL VIEW
-            .offset(y: baseData.showDetail ? 200 : 0)
+            .offset(y: baseData.showDetail ? 500 : 0)
             
             , alignment: .bottom
         )
         
-        
     }
+}
     
     
     

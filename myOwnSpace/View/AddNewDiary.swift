@@ -8,27 +8,21 @@
 import SwiftUI
 
 struct AddNewDiary: View {
-    var body: some View {
-        VStack{
-            HStack{
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var btnBack : some View { Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+            }) {
                 Image(systemName: "chevron.left")
                     .foregroundColor(Color("ebd9fc"))
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text("July 3, 2021")
-                    .foregroundColor(Color("ebd9fc"))
-                    .frame(maxWidth: .infinity)
-                
-                Text("save")
-                    .foregroundColor(Color("ebd9fc"))
-                    .padding(5)
-                    .padding(.horizontal, 5)
-                    .background(Color("B28BF5"))
-                    .cornerRadius(5)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-            }.padding(.horizontal)
-            
+                    .padding(.horizontal)
+            }
+        }
+    
+    var body: some View {
+        VStack{
             VStack{
                 Text("How was your day?")
                     .foregroundColor(Color("ebd9fc"))
@@ -119,11 +113,36 @@ struct AddNewDiary: View {
             .padding(.horizontal)
             .padding(.bottom)
             
+            Button(action: {
+                
+            }, label: {
+                Text("Save")
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(Color("ebd9fc"))
+                    .padding(10)
+                    .background(Color("B28BF5"))
+                    .cornerRadius(5)
+            })
+            
+                .padding(.horizontal)
+            
+            
+            Spacer()
+            
             
         }
         .padding(.vertical)
         .background(Color("18171D"))
-    
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
+        .toolbar{
+            ToolbarItem(placement: .principal) {
+                Text("12 January, 2023")
+                    .foregroundColor(Color("ebd9fc"))
+                    .bold()
+            }
+        }
+        
     }
 }
 

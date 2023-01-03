@@ -15,6 +15,7 @@ class BaseViewModel: ObservableObject {
     
     // MARK: - DETAIL VIEW
   //  @Published var currentProduct: Product?
+    @Published var showAddNewDiary = false
     @Published var showDetail = false
 }
 
