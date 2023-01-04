@@ -11,6 +11,11 @@ import Charts
 struct GraphView: View {
     var body: some View {
         VStack(spacing: 50){
+            Text("Mood Board")
+                .foregroundColor(Color("ebd9fc"))
+                .bold()
+                .font(.title3)
+                
             Chart(data) {
                 LineMark(
                     x: .value("Mount", $0.type.rawValue),
@@ -73,7 +78,5 @@ enum mood: String {
 }
 
 enum mood2: String {
-    case uIKit = "UIKit"
     case swiftUI = "SwiftUI"
-    case machineLearning = "Machine Learning"
 }
