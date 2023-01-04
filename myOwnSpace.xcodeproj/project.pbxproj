@@ -24,6 +24,7 @@
 		80DC38522960A21C00AF54AD /* AddNewDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC38512960A21C00AF54AD /* AddNewDiary.swift */; };
 		80DC385629654E8000AF54AD /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC385529654E8000AF54AD /* DiaryView.swift */; };
 		80DC385829654EAF00AF54AD /* DiaryOneDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC385729654EAF00AF54AD /* DiaryOneDayView.swift */; };
+		80DC385A296562D800AF54AD /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC3859296562D800AF54AD /* GraphView.swift */; };
 		891E6272967F069BE32C8389 /* Pods_myOwnSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34101FAA47BD5A5DD9423C52 /* Pods_myOwnSpace.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		80DC38512960A21C00AF54AD /* AddNewDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDiary.swift; sourceTree = "<group>"; };
 		80DC385529654E8000AF54AD /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		80DC385729654EAF00AF54AD /* DiaryOneDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryOneDayView.swift; sourceTree = "<group>"; };
+		80DC3859296562D800AF54AD /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		EE0657E4C3E23BB04BBCA5F9 /* Pods-myOwnSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myOwnSpace.release.xcconfig"; path = "Target Support Files/Pods-myOwnSpace/Pods-myOwnSpace.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				80DC38512960A21C00AF54AD /* AddNewDiary.swift */,
 				80DC385729654EAF00AF54AD /* DiaryOneDayView.swift */,
 				80DC385529654E8000AF54AD /* DiaryView.swift */,
+				80DC3859296562D800AF54AD /* GraphView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				801BCFCB294EF422009456DC /* CalendarView.swift in Sources */,
 				80DC38522960A21C00AF54AD /* AddNewDiary.swift in Sources */,
 				801BCFD1294F24CE009456DC /* Day.swift in Sources */,
+				80DC385A296562D800AF54AD /* GraphView.swift in Sources */,
 				80DC385029600C3A00AF54AD /* BaseViewModel.swift in Sources */,
 				80DC384D29600B6500AF54AD /* HomeView.swift in Sources */,
 				8029012029407163005431E4 /* ContentView.swift in Sources */,

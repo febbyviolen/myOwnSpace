@@ -32,7 +32,7 @@ struct ContentView: View {
                 .tag(Tab.Home)
             DiaryView()
                 .tag(Tab.Diary)
-            Text("Clipboard")
+            GraphView()
                 .tag(Tab.Graph)
             Text("Person")
                 .tag(Tab.Setting)
