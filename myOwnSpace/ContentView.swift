@@ -30,19 +30,19 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.black.opacity(0.04))
                 .tag(Tab.Home)
-            Text("heart")
-                .tag(Tab.Heart)
+            DiaryView()
+                .tag(Tab.Diary)
             Text("Clipboard")
-                .tag(Tab.ClipBoard)
+                .tag(Tab.Graph)
             Text("Person")
-                .tag(Tab.Person)
+                .tag(Tab.Setting)
         }
         .overlay(
             // MARK: - CUSTOM TAB BAR
             HStack(spacing: 0) {
                 // MARK: - TAB BUTTON
                 TabButton(Tab: .Home)
-                TabButton(Tab: .Heart)
+                TabButton(Tab: .Diary)
                     .offset(x: -10)
                 
                 // MARK: CURVED BUTTON
@@ -66,9 +66,9 @@ struct ContentView: View {
                         baseData.showDetail = true
                     }
                                 
-                TabButton(Tab: .ClipBoard)
+                TabButton2(Tab: .Graph)
                     .offset(x: 10)
-                TabButton(Tab: .Person)
+                TabButton2(Tab: .Setting)
             }
             .background(
                 Color("252328")
@@ -96,6 +96,23 @@ struct ContentView: View {
             }
         } label: {
             Image(systemName: Tab.rawValue)
+                .resizable()
+                .renderingMode(.template)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 25, height: 25)
+                .foregroundColor(baseData.currentTab == Tab ? Color("B28BF5") : Color.gray.opacity(0.5))
+                .frame(maxWidth: .infinity)
+        }
+    }
+    
+    @ViewBuilder
+    func TabButton2(Tab: Tab)-> some View {
+        Button {
+            withAnimation{
+                baseData.currentTab = Tab
+            }
+        } label: {
+            Image(Tab.rawValue)
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
