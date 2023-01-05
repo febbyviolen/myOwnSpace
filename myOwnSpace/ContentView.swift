@@ -34,7 +34,7 @@ struct ContentView: View {
                 .tag(Tab.Diary)
             GraphView()
                 .tag(Tab.Graph)
-            Text("Person")
+            SettingView()
                 .tag(Tab.Setting)
         }
         .overlay(

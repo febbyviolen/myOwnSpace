@@ -26,6 +26,7 @@ struct HomeView: View {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color("f2ebfb"))
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                    .opacity(0)
             }
             .padding(.horizontal)
             .padding(.vertical)

@@ -38,6 +38,7 @@ struct DiaryOneDayView: View {
                     .scaledToFit()
                     .frame(width: 30, alignment: .leading)
                     .padding(.horizontal)
+                    .padding(.vertical, 5)
                 Divider()
                     .overlay(Color("ebd9fc"))
                 Text("07:00 \nhello my name is who? do you know who I am?? hello my name is like you know i dont know... ")

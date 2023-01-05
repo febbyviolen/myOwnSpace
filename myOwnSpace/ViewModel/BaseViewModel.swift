@@ -20,8 +20,8 @@ class BaseViewModel: ObservableObject {
 }
 
 enum Tab: String {
-    case Home = "house"
-    case Diary = "book.closed"
+    case Home = "house.fill"
+    case Diary = "book.closed.fill"
     case Graph = "graph"
     case Setting = "setting"
 }

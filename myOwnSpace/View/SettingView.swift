@@ -34,7 +34,7 @@ struct SettingView: View {
             .foregroundColor(Color("ebd9fc"))
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color("252328"))
-            .cornerRadius(5)
+            .cornerRadius(10)
             
             Spacer()
         }
