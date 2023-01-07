@@ -9,6 +9,7 @@ import Foundation
 
 class MoodModelController: ObservableObject {
     @Published var diarys: [Diary] = []
+    @Published var graph: [GraphModel] = []
     
 //    init() {
 //        loadFromPersistentStore()
@@ -30,7 +31,8 @@ class MoodModelController: ObservableObject {
         //saveToPersistentStore()
     }
     
-    func updateMoodComment(diary: Diary, mood: Mood, diaryText: String?, date: Date){
+    //update diary
+    func updateDiary(diary: Diary, mood: Mood, diaryText: String?, date: Date){
         if let index = diarys.firstIndex(of: diary) {
             var diary = diarys[index]
             diary.mood = mood
@@ -74,6 +76,25 @@ class MoodModelController: ObservableObject {
             diarys = try decoder.decode([Diary].self, from: data)
         } catch {
             print("error loading data: \(error)")
+        }
+    }
+    
+    func MoodValue(){
+        var currentDate: Date = Date()
+        var currentValue: Double = 0
+        var total: Double = 0
+        for diary in diarys {
+            if diary.date == currentDate {
+                total += 1
+                currentValue += Double(diary.mood.moodState.value)
+            } else {
+                currentValue = currentValue/total
+                graph.append(GraphModel(date: currentDate, value: currentValue))
+
+                currentDate = diary.date
+                currentValue = 0
+                total = 0
+            }
         }
     }
     

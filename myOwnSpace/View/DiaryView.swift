@@ -33,9 +33,7 @@ struct DiaryView: View {
                 .overlay(Color("ebd9fc"))
             
             ScrollView{
-                DiaryOneDayView()
-                DiaryOneDayView()
-                DiaryOneDayView()
+                DiaryOneDayView(diarys: [Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), date: Date()), Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), date: Date())])
             }
         }
         .background(Color("18171D"))

@@ -8,21 +8,24 @@
 import SwiftUI
 
 struct DiaryOneDayView: View {
+    
+    var diarys: [Diary]
+    
     var body: some View {
         HStack{
             VStack{
-                Text("9")
+                Text(diarys.first!.dateString)
                     .bold()
                     .foregroundColor(Color("ebd9fc"))
-                Text("Jan")
+                Text(diarys.first!.monthString)
                     .bold()
                     .foregroundColor(Color("ebd9fc"))
                 Spacer()
                 
-                Text("Moods: 10")
+                Text("Moods: \(diarys.count)")
                     .font(.subheadline)
                     .foregroundColor(Color("ebd9fc"))
-                Text("Stories: 10")
+                Text("Stories: \(TotalText())")
                     .font(.subheadline)
                     .foregroundColor(Color("ebd9fc"))
             }
@@ -33,15 +36,10 @@ struct DiaryOneDayView: View {
                 .overlay(Color("ebd9fc"))
             
             VStack(alignment: .leading){
-                Image("null")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30, alignment: .leading)
-                    .padding(.horizontal)
-                    .padding(.vertical, 5)
+                DiaryImage()
                 Divider()
                     .overlay(Color("ebd9fc"))
-                Text("07:00 \nhello my name is who? do you know who I am?? hello my name is like you know i dont know... ")
+                Text(DiaryTextString())
                     .font(.subheadline)
                     .lineLimit(3)
                     .foregroundColor(Color("ebd9fc"))
@@ -59,10 +57,48 @@ struct DiaryOneDayView: View {
         .padding(.horizontal)
         .padding(.bottom)
     }
+    
+    func TotalText() -> String {
+        var total: Int = 0
+        for diary in diarys {
+            if diary.haveTextDiary == true {
+                total += 1
+            }
+        }
+        return String(total)
+    }
+    
+    func DiaryTextString() -> String {
+        var str: String = ""
+        for diary in diarys {
+            if diary.haveTextDiary {
+                str += diary.timeString
+                str += "\n" + diary.diary! + "\n"
+            }
+        }
+        return str
+    }
+
 }
 
 struct DiaryOneDayView_Previews: PreviewProvider {
     static var previews: some View {
-        DiaryOneDayView()
+        DiaryOneDayView(diarys: [Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), diary: "hello my name is febby?", date: Date()), Diary(mood: Mood(moodState: .sad, moodImage: .sadImage), date: Date())])
     }
+}
+
+extension DiaryOneDayView {
+    func DiaryImage() -> some View{
+        HStack{
+            ForEach(diarys) { diary in
+                Image(diary.mood.moodImage.rawValue)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 30, alignment: .leading)
+            }
+        }
+        .padding(.horizontal)
+        .padding(.vertical, 5)
+    }
+    
 }

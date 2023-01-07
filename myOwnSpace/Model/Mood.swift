@@ -13,6 +13,27 @@ enum MoodState: String, Codable {
     case okay
     case sad
     case angry
+    
+    var value: Int {
+        switch self {
+        case .soHappy:
+            return 5
+        case .happy:
+            return 4
+        case .okay:
+            return 3
+        case .sad:
+            return 2
+        case .angry:
+            return 1
+        }
+    }
+}
+
+enum Time: String, Codable{
+    case thisMonth = "monthly"
+    case thisWeek = "weekly"
+    case thisYear = "yearly"
 }
 
 enum MoodImage: String, Codable {
@@ -22,6 +43,7 @@ enum MoodImage: String, Codable {
     case sadImage = "sad"
     case angryImage = "angry"
 }
+
 
 struct Mood: Codable {
     var moodState: MoodState
@@ -33,12 +55,14 @@ struct Diary: Codable, Equatable, Identifiable {
     var mood: Mood
     var diary : String?
     var date: Date
+    var timeRange: Time
     
     //init
     init(mood: Mood, diary: String? = nil, date: Date) {
         self.mood = mood
         self.diary = diary
         self.date = date
+        self.timeRange = .thisMonth
     }
     
     //get date string
@@ -59,6 +83,7 @@ struct Diary: Codable, Equatable, Identifiable {
         return month
     }
 
+    //get time string
     var timeString: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
@@ -75,4 +100,13 @@ struct Diary: Codable, Equatable, Identifiable {
         }
     }
     
+    var haveTextDiary: Bool{
+        if diary == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+    
 }
+

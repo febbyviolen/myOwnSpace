@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct TodayDiary: View {
+    
+    var diary: Diary
+    
     var body: some View {
         HStack{
             VStack(spacing: 5){
-                Text("9")
+                Text(diary.dateString)
                     .bold()
                     .foregroundColor(Color("ebd9fc"))
                 
-                Text("07:00")
+                Text(diary.timeString)
                     .font(.subheadline)
                     .foregroundColor(Color("d4bbfc"))
                 
-                Image("null")
+                Image(diary.mood.moodImage.rawValue)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30)
+                    .padding(.top, 5)
                     
                 Spacer()
             }
@@ -33,7 +37,7 @@ struct TodayDiary: View {
             Divider()
                 .overlay(Color("ebd9fc"))
             
-            Text("hello my name is who? do you know who I am?? hello my")
+            Text(diary.diary ?? "")
                 .foregroundColor(Color("ebd9fc"))
                 .padding(.horizontal)
                 .padding(.trailing)
@@ -54,6 +58,6 @@ struct TodayDiary: View {
 
 struct TodayDiary_Previews: PreviewProvider {
     static var previews: some View {
-        TodayDiary()
+        TodayDiary(diary: Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), date: Date()))
     }
 }

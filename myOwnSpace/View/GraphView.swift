@@ -9,36 +9,83 @@ import SwiftUI
 import Charts
 
 struct GraphView: View {
+    
+    var diarys: [Diary]
+    var graph: [GraphModel]
+    let markColors: [Color] = [.pink, .purple, .red, .yellow, .blue]
+    
     var body: some View {
-        VStack(spacing: 50){
+        VStack(spacing: 20){
             Text("Mood Board")
                 .foregroundColor(Color("ebd9fc"))
                 .bold()
                 .font(.title3)
                 
-            Chart(data) {
-                LineMark(
-                    x: .value("Mount", $0.type.rawValue),
-                    y: .value("Value", $0.count.rawValue)
-                )
-                PointMark(
-                    x: .value("Mount", $0.type.rawValue),
-                    y: .value("Value", $0.count.rawValue)
-                )
+            HStack{
+                Chart(graph) {
+                    LineMark(
+                        x: .value("Mount", $0.date),
+                        y: .value("Value", $0.value)
+                    )
+                    PointMark(
+                        x: .value("Mount", $0.date),
+                        y: .value("Value", $0.value)
+                    )
+                    
+                }
+                .chartYScale(domain: 0...5)
+                .chartYAxis(.hidden)
+                .environment(\.colorScheme, .dark)
+                .foregroundColor(Color("B28BF5"))
+                .padding(.top)
+                .padding(.bottom)
                 
+                VStack(spacing: 20){
+                    Image(MoodImage.soHappyImage.rawValue)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, alignment: .trailing)
+                    Image(MoodImage.happyImage.rawValue)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, alignment: .trailing)
+                    Image(MoodImage.okayImage.rawValue)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, alignment: .trailing)
+                    Image(MoodImage.sadImage.rawValue)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, alignment: .trailing)
+                    Image(MoodImage.angryImage.rawValue)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, alignment: .trailing)
+                    Spacer()
+
+                }
+                
+                .frame(maxHeight: .infinity)
+                .padding(.bottom, 0)
+                .padding(.leading)
             }
-            .frame(maxWidth: .infinity, maxHeight: 350)
-            .environment(\.colorScheme, .dark)
-            .foregroundColor(Color("B28BF5"))
+            .frame(maxWidth: .infinity, maxHeight: 300)
             
             
-            Chart(data) { data in
+            
+            Text("This month mood stack")
+                .foregroundColor(Color("ebd9fc"))
+                .font(.subheadline)
+                .bold()
+                .padding(.top)
+            
+            Chart(diarys) { data in
                 BarMark(
-                    x: .value("Mount", data.student),
-                    y: .value("Value", data.count.rawValue)
+                    x: .value("Count", diarys.count),
+                    y: .value("Value", data.timeRange.rawValue)
                 )
-                .foregroundStyle(by: .value("Count", data.type.rawValue))
-    
+                .foregroundStyle(by: .value("Count", data.mood.moodState.rawValue))
+                
             }
             .frame(maxWidth: .infinity, maxHeight: 150)
             .environment(\.colorScheme, .dark)
@@ -54,8 +101,19 @@ struct GraphView: View {
 
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphView()
+        GraphView(diarys: [Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), date: Date()), Diary(mood: Mood(moodState: .sad, moodImage: .happyImage), date: Date()), Diary(mood: Mood(moodState: .sad, moodImage: .happyImage), date: Date()), Diary(mood: Mood(moodState: .sad, moodImage: .happyImage), date: Date())], graph: [GraphModel(date: dateToy(), value: 3), GraphModel(date: Date(), value: 1)])
     }
+}
+
+func dateToy() -> Date{
+    let isoDate = "2016-04-14T10:44:00+0000"
+
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    let date = dateFormatter.date(from:isoDate)!
+    
+    return date
 }
 
 struct ToyShape: Identifiable {

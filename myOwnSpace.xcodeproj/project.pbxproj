@@ -25,6 +25,8 @@
 		80DC385C2965F2B600AF54AD /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC385B2965F2B600AF54AD /* SettingView.swift */; };
 		80DC385E29668C3400AF54AD /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC385D29668C3400AF54AD /* Mood.swift */; };
 		80DC3860296691B700AF54AD /* MoodModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC385F296691B700AF54AD /* MoodModelController.swift */; };
+		80DC38622967EA6B00AF54AD /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC38612967EA6B00AF54AD /* GraphModel.swift */; };
+		80DC386829694D9100AF54AD /* GraphModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC386729694D9100AF54AD /* GraphModel2.swift */; };
 		891E6272967F069BE32C8389 /* Pods_myOwnSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34101FAA47BD5A5DD9423C52 /* Pods_myOwnSpace.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		80DC385B2965F2B600AF54AD /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		80DC385D29668C3400AF54AD /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		80DC385F296691B700AF54AD /* MoodModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodModelController.swift; sourceTree = "<group>"; };
+		80DC38612967EA6B00AF54AD /* GraphModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel.swift; sourceTree = "<group>"; };
+		80DC386729694D9100AF54AD /* GraphModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel2.swift; sourceTree = "<group>"; };
 		EE0657E4C3E23BB04BBCA5F9 /* Pods-myOwnSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myOwnSpace.release.xcconfig"; path = "Target Support Files/Pods-myOwnSpace/Pods-myOwnSpace.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				80DC385D29668C3400AF54AD /* Mood.swift */,
+				80DC38612967EA6B00AF54AD /* GraphModel.swift */,
+				80DC386729694D9100AF54AD /* GraphModel2.swift */,
 				80DC385F296691B700AF54AD /* MoodModelController.swift */,
 			);
 			path = Model;
@@ -274,6 +280,7 @@
 				8029012729407166005431E4 /* Persistence.swift in Sources */,
 				80DC385829654EAF00AF54AD /* DiaryOneDayView.swift in Sources */,
 				8029012A29407166005431E4 /* myOwnSpace.xcdatamodeld in Sources */,
+				80DC386829694D9100AF54AD /* GraphModel2.swift in Sources */,
 				80CF7B9B295C3DD6006280A8 /* DatePickerCalendar.swift in Sources */,
 				80DC38522960A21C00AF54AD /* AddNewDiary.swift in Sources */,
 				80DC385A296562D800AF54AD /* GraphView.swift in Sources */,
@@ -281,6 +288,7 @@
 				80DC385C2965F2B600AF54AD /* SettingView.swift in Sources */,
 				80DC3860296691B700AF54AD /* MoodModelController.swift in Sources */,
 				80DC384D29600B6500AF54AD /* HomeView.swift in Sources */,
+				80DC38622967EA6B00AF54AD /* GraphModel.swift in Sources */,
 				8029012029407163005431E4 /* ContentView.swift in Sources */,
 				80DC385E29668C3400AF54AD /* Mood.swift in Sources */,
 				80DC3849295DF4F600AF54AD /* TodayDiary.swift in Sources */,
