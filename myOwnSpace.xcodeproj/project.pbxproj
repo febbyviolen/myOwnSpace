@@ -27,6 +27,7 @@
 		80DC3860296691B700AF54AD /* MoodModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC385F296691B700AF54AD /* MoodModelController.swift */; };
 		80DC38622967EA6B00AF54AD /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC38612967EA6B00AF54AD /* GraphModel.swift */; };
 		80DC386829694D9100AF54AD /* GraphModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC386729694D9100AF54AD /* GraphModel2.swift */; };
+		80DC386A296E7A5B00AF54AD /* VoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC3869296E7A5B00AF54AD /* VoiceViewModel.swift */; };
 		891E6272967F069BE32C8389 /* Pods_myOwnSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34101FAA47BD5A5DD9423C52 /* Pods_myOwnSpace.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		80DC385F296691B700AF54AD /* MoodModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodModelController.swift; sourceTree = "<group>"; };
 		80DC38612967EA6B00AF54AD /* GraphModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel.swift; sourceTree = "<group>"; };
 		80DC386729694D9100AF54AD /* GraphModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel2.swift; sourceTree = "<group>"; };
+		80DC3869296E7A5B00AF54AD /* VoiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceViewModel.swift; sourceTree = "<group>"; };
 		EE0657E4C3E23BB04BBCA5F9 /* Pods-myOwnSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myOwnSpace.release.xcconfig"; path = "Target Support Files/Pods-myOwnSpace/Pods-myOwnSpace.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 				80DC38612967EA6B00AF54AD /* GraphModel.swift */,
 				80DC386729694D9100AF54AD /* GraphModel2.swift */,
 				80DC385F296691B700AF54AD /* MoodModelController.swift */,
+				80DC3869296E7A5B00AF54AD /* VoiceViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				80DC385E29668C3400AF54AD /* Mood.swift in Sources */,
 				80DC3849295DF4F600AF54AD /* TodayDiary.swift in Sources */,
 				80DC385629654E8000AF54AD /* DiaryView.swift in Sources */,
+				80DC386A296E7A5B00AF54AD /* VoiceViewModel.swift in Sources */,
 				80DC384B295EDCAF00AF54AD /* TabBarShape.swift in Sources */,
 				8029011E29407163005431E4 /* myOwnSpaceApp.swift in Sources */,
 			);

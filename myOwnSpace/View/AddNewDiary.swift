@@ -105,7 +105,7 @@ struct AddNewDiary: View {
                         Color("ebd9fc")
                     }
                 
-                TextField("", text: $text, axis: .vertical)
+                TextField("write here...", text: $text, axis: .vertical)
                     .foregroundColor(Color("ebd9fc"))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .tint(Color("ebd9fc"))

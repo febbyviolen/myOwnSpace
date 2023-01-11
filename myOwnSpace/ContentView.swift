@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject var baseData = BaseViewModel()
     @ObservedObject var moodModelController = MoodModelController()
     @Environment(\.managedObjectContext) private var viewContext
+    @State var show = false
 
 //    @FetchRequest(
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
@@ -26,15 +27,18 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
         TabView(selection: $baseData.currentTab ) {
-            HomeView()
+            HomeView(moodModelController: self.moodModelController)
                 .environmentObject(baseData)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.black.opacity(0.04))
                 .tag(Tab.Home)
+            
             DiaryView()
                 .tag(Tab.Diary)
+            
             GraphView(diarys: [Diary(mood: Mood.happy, date: Date()), Diary(mood: .soHappy, date: Date())], graph: [GraphModel(date: dateToy(), value: 2.5), GraphModel(date: Date(), value: 5)])
                 .tag(Tab.Graph)
+            
             SettingView()
                 .tag(Tab.Setting)
         }
@@ -63,6 +67,9 @@ struct ContentView: View {
                             .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)
                     }
                     .offset(y: -25)
+                    .sheet(isPresented: self.$show, content: {
+                        AddNewDiary(moodModelController: self.moodModelController)
+                    })
                     .onTapGesture {
                         baseData.showDetail = true
                     }

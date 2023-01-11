@@ -128,3 +128,10 @@ struct Diary: Codable, Equatable, Identifiable {
     
 }
 
+struct Recording : Equatable {
+    
+    let fileURL : URL
+    let createdAt : Date
+    var isPlaying : Bool
+    
+}

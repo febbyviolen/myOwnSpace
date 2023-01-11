@@ -12,16 +12,16 @@ class MoodModelController: ObservableObject {
     @Published var graph: [GraphModel] = []
     @Published var graph2: [GraphModel2] = []
     
-//    init() {
-//        loadFromPersistentStore()
-//    }
+    init() {
+        loadFromPersistentStore()
+    }
     
     //add new diary for today
     func createDiary(mood: Mood, diaryText: String?, date: Date) {
         let newDiary = Diary(mood: mood, diary: diaryText, date: date)
         
         diarys.append(newDiary)
-        //saveToPersistentStore()
+        saveToPersistentStore()
     }
     
     //delete diary
@@ -29,7 +29,7 @@ class MoodModelController: ObservableObject {
         guard let index = Array(offset).first else { return }
         
         diarys.remove(at: index)
-        //saveToPersistentStore()
+        saveToPersistentStore()
     }
     
     //update diary
@@ -41,7 +41,7 @@ class MoodModelController: ObservableObject {
             diary.date = date
             
             diarys[index] = diary
-            //saveToPersistentStore()
+            saveToPersistentStore()
         }
     }
     
@@ -56,7 +56,7 @@ class MoodModelController: ObservableObject {
     
     
     //Starts -> Data -> Plist
-    func persistentFileStore() {
+    func saveToPersistentStore() {
         guard let url = persistentFileURL else {return}
         do {
             let encoder = PropertyListEncoder()
@@ -91,12 +91,21 @@ class MoodModelController: ObservableObject {
             } else {
                 currentValue = currentValue/total
                 graph.append(GraphModel(date: currentDate, value: currentValue))
-
+                
                 currentDate = diary.date
                 currentValue = 0
                 total = 0
             }
         }
+    }
+    
+    func getFirstMood(date: Date) -> String{
+        for i in diarys {
+            if i.date == date {
+                return i.mood.image
+            }
+        }
+        return "null"
     }
     
     

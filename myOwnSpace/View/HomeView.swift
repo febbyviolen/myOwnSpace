@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @ObservedObject var moodModelController: MoodModelController
+//    @Binding var show : Bool
+    
     var body: some View {
         VStack{
             HStack {
@@ -32,14 +36,19 @@ struct HomeView: View {
             .padding(.vertical)
             
             ScrollView(){
-                DatePickerCalendar()
-                TodayDiary(diary: Diary(mood: Mood.soHappy, date: Date()))
+                DatePickerCalendar(selectedDate: Date())
+                ForEach(self.moodModelController.diarys, id:\.id){diary in
+                    TodayDiary(diary: diary)
+                }
+                .onDelete { (index) in
+                    self.moodModelController.deleteDiary(at: index)
+                }
                 Spacer(minLength: 100)
             }
-            
-            
+            .onAppear{
+                moodModelController.loadFromPersistentStore()
+            }
         }
-        
         .background(Color("18171D"))
     }
     
@@ -52,6 +61,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(moodModelController: MoodModelController())
     }
 }
