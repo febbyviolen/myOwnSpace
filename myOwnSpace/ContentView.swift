@@ -10,6 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @StateObject var baseData = BaseViewModel()
+    @ObservedObject var moodModelController = MoodModelController()
     @Environment(\.managedObjectContext) private var viewContext
 
 //    @FetchRequest(
@@ -32,7 +33,7 @@ struct ContentView: View {
                 .tag(Tab.Home)
             DiaryView()
                 .tag(Tab.Diary)
-            GraphView(diarys: [Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), date: Date()), Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), date: Date())], graph: [GraphModel(date: dateToy(), value: 2.5), GraphModel(date: Date(), value: 5)])
+            GraphView(diarys: [Diary(mood: Mood.happy, date: Date()), Diary(mood: .soHappy, date: Date())], graph: [GraphModel(date: dateToy(), value: 2.5), GraphModel(date: Date(), value: 5)])
                 .tag(Tab.Graph)
             SettingView()
                 .tag(Tab.Setting)
@@ -46,7 +47,7 @@ struct ContentView: View {
                     .offset(x: -10)
                 
                 // MARK: CURVED BUTTON
-                NavigationLink(destination: AddNewDiary()) {
+                NavigationLink(destination: AddNewDiary(moodModelController: self.moodModelController)) {
                         Image(systemName: "plus")
                             .resizable()
                             .renderingMode(.template)

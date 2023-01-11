@@ -41,23 +41,23 @@ struct GraphView: View {
                 .padding(.bottom)
                 
                 VStack(spacing: 20){
-                    Image(MoodImage.soHappyImage.rawValue)
+                    Image(Mood.soHappy.image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30, alignment: .trailing)
-                    Image(MoodImage.happyImage.rawValue)
+                    Image(Mood.happy.image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30, alignment: .trailing)
-                    Image(MoodImage.okayImage.rawValue)
+                    Image(Mood.okay.image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30, alignment: .trailing)
-                    Image(MoodImage.sadImage.rawValue)
+                    Image(Mood.sad.image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30, alignment: .trailing)
-                    Image(MoodImage.angryImage.rawValue)
+                    Image(Mood.angry.image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30, alignment: .trailing)
@@ -84,7 +84,7 @@ struct GraphView: View {
                     x: .value("Count", diarys.count),
                     y: .value("Value", data.timeRange.rawValue)
                 )
-                .foregroundStyle(by: .value("Count", data.mood.moodState.rawValue))
+                .foregroundStyle(by: .value("Count", data.mood.rawValue))
                 
             }
             .frame(maxWidth: .infinity, maxHeight: 150)
@@ -101,7 +101,7 @@ struct GraphView: View {
 
 struct GraphView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphView(diarys: [Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), date: Date()), Diary(mood: Mood(moodState: .sad, moodImage: .happyImage), date: Date()), Diary(mood: Mood(moodState: .sad, moodImage: .happyImage), date: Date()), Diary(mood: Mood(moodState: .sad, moodImage: .happyImage), date: Date())], graph: [GraphModel(date: dateToy(), value: 3), GraphModel(date: Date(), value: 1)])
+        GraphView(diarys: [Diary(mood: .soHappy, date: Date()), Diary(mood: Mood.sad, date: Date())], graph: [GraphModel(date: dateToy(), value: 3), GraphModel(date: Date(), value: 1)])
     }
 }
 

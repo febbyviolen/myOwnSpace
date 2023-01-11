@@ -83,7 +83,7 @@ struct DiaryOneDayView: View {
 
 struct DiaryOneDayView_Previews: PreviewProvider {
     static var previews: some View {
-        DiaryOneDayView(diarys: [Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), diary: "hello my name is febby?", date: Date()), Diary(mood: Mood(moodState: .sad, moodImage: .sadImage), date: Date())])
+        DiaryOneDayView(diarys: [Diary(mood: .soHappy, diary: "hello my name is febby?", date: Date()), Diary(mood: .sad, date: Date())])
     }
 }
 
@@ -91,7 +91,7 @@ extension DiaryOneDayView {
     func DiaryImage() -> some View{
         HStack{
             ForEach(diarys) { diary in
-                Image(diary.mood.moodImage.rawValue)
+                Image(diary.mood.image)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30, alignment: .leading)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MoodState: String, Codable {
+enum Mood: String, Codable {
     case soHappy
     case happy
     case okay
@@ -28,7 +28,38 @@ enum MoodState: String, Codable {
             return 1
         }
     }
+    
+    var image: String {
+        switch self{
+        case .soHappy:
+            return "sohappy"
+        case .happy:
+            return "happy"
+        case .okay:
+            return "ok"
+        case .sad:
+            return "sad"
+        case .angry:
+            return "angry"
+        }
+    }
+    
+    var desc: String {
+        switch self{
+        case .soHappy:
+            return "sohappy"
+        case .happy:
+            return "happy"
+        case .okay:
+            return "ok"
+        case .sad:
+            return "sad"
+        case .angry:
+            return "angry"
+        }
+    }
 }
+
 
 enum Time: String, Codable{
     case thisMonth = "monthly"
@@ -36,19 +67,6 @@ enum Time: String, Codable{
     case thisYear = "yearly"
 }
 
-enum MoodImage: String, Codable {
-    case soHappyImage = "sohappy"
-    case happyImage = "happy"
-    case okayImage = "ok"
-    case sadImage = "sad"
-    case angryImage = "angry"
-}
-
-
-struct Mood: Codable {
-    var moodState: MoodState
-    var moodImage: MoodImage
-}
 
 struct Diary: Codable, Equatable, Identifiable {
     var id = UUID()

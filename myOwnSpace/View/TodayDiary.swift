@@ -22,7 +22,7 @@ struct TodayDiary: View {
                     .font(.subheadline)
                     .foregroundColor(Color("d4bbfc"))
                 
-                Image(diary.mood.moodImage.rawValue)
+                Image(diary.mood.image)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 30)
@@ -58,6 +58,6 @@ struct TodayDiary: View {
 
 struct TodayDiary_Previews: PreviewProvider {
     static var previews: some View {
-        TodayDiary(diary: Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), date: Date()))
+        TodayDiary(diary: Diary(mood: Mood.soHappy, date: Date()))
     }
 }

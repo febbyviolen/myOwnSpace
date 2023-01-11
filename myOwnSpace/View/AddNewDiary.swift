@@ -9,6 +9,11 @@ import SwiftUI
 
 struct AddNewDiary: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject var moodModelController: MoodModelController
+    
+    @State var text: String = ""
+    @State private var moodState : Mood = .soHappy
+    
     
     var btnBack : some View { Button(action: {
             self.presentationMode.wrappedValue.dismiss()
@@ -22,42 +27,62 @@ struct AddNewDiary: View {
         }
     
     var body: some View {
-        VStack{
+        ScrollView{
             VStack{
                 Text("How was your day?")
                     .foregroundColor(Color("ebd9fc"))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 HStack(){
-                    Image("null")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(Color("ebd9fc"))
-                        .frame(maxWidth: 30)
+                    Button(action: {
+                        self.moodState = .soHappy
+                    }, label: {
+                        Image("null")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color("ebd9fc"))
+                            .frame(maxWidth: self.moodState == .soHappy ? 40 : 30)
+                    })
                     Spacer()
-                    Image("null")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(Color("ebd9fc"))
-                        .frame(maxWidth: 30)
+                    Button(action: {
+                        self.moodState = .happy
+                    }, label: {
+                        Image("null")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color("ebd9fc"))
+                            .frame(maxWidth: self.moodState == .happy ? 40 : 30)
+                    })
                     Spacer()
-                    Image("null")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(Color("ebd9fc"))
-                        .frame(maxWidth: 30)
+                    Button(action: {
+                        self.moodState = .okay
+                    }, label: {
+                        Image("null")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color("ebd9fc"))
+                            .frame(maxWidth: self.moodState == .okay ? 40 : 30)
+                    })
                     Spacer()
-                    Image("null")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(Color("ebd9fc"))
-                        .frame(maxWidth: 30)
+                    Button(action: {
+                        self.moodState = .sad
+                    }, label: {
+                        Image("null")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color("ebd9fc"))
+                            .frame(maxWidth: self.moodState == .sad ? 40 : 30)
+                    })
                     Spacer()
-                    Image("null")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(Color("ebd9fc"))
-                        .frame(maxWidth: 30)
+                    Button(action: {
+                        self.moodState = .angry
+                    }, label: {
+                        Image("null")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color("ebd9fc"))
+                            .frame(maxWidth: self.moodState == .angry ? 40 : 30)
+                    })
                 }
                 .frame(maxWidth: .infinity)
             }
@@ -80,9 +105,10 @@ struct AddNewDiary: View {
                         Color("ebd9fc")
                     }
                 
-                Text("this is where you write your story nanti ganti jadi itu yaaaaaaaaa")
+                TextField("", text: $text, axis: .vertical)
                     .foregroundColor(Color("ebd9fc"))
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .tint(Color("ebd9fc"))
             }
             .padding(.vertical)
             .padding(.horizontal)
@@ -114,7 +140,12 @@ struct AddNewDiary: View {
             .padding(.bottom)
             
             Button(action: {
+                self.moodModelController.createDiary(mood: self.moodState, diaryText: self.text == "" ? nil : self.text, date: Date())
                 
+                withAnimation {
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+               
             }, label: {
                 Text("Save")
                     .frame(maxWidth: .infinity)
@@ -148,6 +179,6 @@ struct AddNewDiary: View {
 
 struct AddNewDiary_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewDiary()
+        AddNewDiary(moodModelController: MoodModelController())
     }
 }

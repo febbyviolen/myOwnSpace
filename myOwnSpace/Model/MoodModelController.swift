@@ -10,6 +10,7 @@ import Foundation
 class MoodModelController: ObservableObject {
     @Published var diarys: [Diary] = []
     @Published var graph: [GraphModel] = []
+    @Published var graph2: [GraphModel2] = []
     
 //    init() {
 //        loadFromPersistentStore()
@@ -86,7 +87,7 @@ class MoodModelController: ObservableObject {
         for diary in diarys {
             if diary.date == currentDate {
                 total += 1
-                currentValue += Double(diary.mood.moodState.value)
+                currentValue += Double(diary.mood.value)
             } else {
                 currentValue = currentValue/total
                 graph.append(GraphModel(date: currentDate, value: currentValue))
@@ -97,5 +98,6 @@ class MoodModelController: ObservableObject {
             }
         }
     }
+    
     
 }

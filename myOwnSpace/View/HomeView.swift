@@ -33,7 +33,7 @@ struct HomeView: View {
             
             ScrollView(){
                 DatePickerCalendar()
-                TodayDiary(diary: Diary(mood: Mood(moodState: .happy, moodImage: .happyImage), date: Date()))
+                TodayDiary(diary: Diary(mood: Mood.soHappy, date: Date()))
                 Spacer(minLength: 100)
             }
             

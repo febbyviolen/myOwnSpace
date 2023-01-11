@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct GraphModel2: Identifiable{
+    var id = UUID()
+    var totalMood: Int
+    var mood: Mood
+    
+    init(id: UUID = UUID(), totalMood: Int, mood: Mood) {
+        self.id = id
+        self.totalMood = totalMood
+        self.mood = mood
+    }
+    
+}
